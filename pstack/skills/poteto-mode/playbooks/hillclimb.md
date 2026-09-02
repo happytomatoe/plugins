@@ -19,3 +19,5 @@ Core discipline: one change, one measurement, keep or revert. Never stack untest
 8. Run **Opening a PR** with the accepted commits stacked in the order they landed, so the metric's climb reads top to bottom.
 
 **Reply:** the metric and target, baseline to final with the percent delta, iterations run (kept vs reverted), each accepted fix on one line, the `decision.tsv` path, and the best idea you would try next if pushed further.
+
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

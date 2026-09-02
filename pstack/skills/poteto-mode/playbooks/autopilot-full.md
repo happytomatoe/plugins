@@ -11,3 +11,5 @@
 7. **Stand down instantly on the operator's stop.** Her hold or stand-down reaches every owner as a zero-writes order immediately. Owners hold their briefs until she releases them.
 
 **Reply:** the queue with each PR's owner, state, and head SHA; each verdict and the swarm that produced it; what merged and what each owner took next; countersigns granted and why; open operator gates; where the collected decision trails live.
+
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

@@ -9,3 +9,5 @@
 5. Run **Opening a PR** per component or per safe batch.
 
 **Reply:** components migrated, the diff result for each, the baseline harness location, what's left.
+
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
