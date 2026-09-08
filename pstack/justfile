@@ -1,4 +1,4 @@
-root := env_var('PWD')
+root := justfile_directory()
 
 default: install
 
@@ -18,7 +18,7 @@ install:
 	ln -sf "$ROOT"/agents/poteto-agent.md ~/.agents/skills/pstack/reference-poteto-agent.md
 	ln -sf "$ROOT"/agents/comment-sicko.md ~/.agents/skills/pstack/reference-comment-sicko.md
 	echo "✓ pstack skills symlinked to ~/.agents/skills/pstack/"
-	echo "  Run /setup-pstack to configure models, then /poteto-mode to get started."
+	echo "  Run /setup-pstack to verify the install, then /poteto-mode to get started."
 
 # Uninstall pstack skills
 uninstall:
