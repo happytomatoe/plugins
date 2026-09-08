@@ -11,4 +11,4 @@ When in doubt, delete; prose earns its keep by changing a decision. Tell it to d
 
 **Reply:** summary of the skill, key design decisions, validation notes.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

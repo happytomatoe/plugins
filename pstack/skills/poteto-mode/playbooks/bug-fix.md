@@ -16,4 +16,4 @@ Investigation fans out `how` + `why` as parallel subagents.
 
 **Reply:** what was broken, root cause, fix, how you verified. Paste failing-then-passing repro output verbatim.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

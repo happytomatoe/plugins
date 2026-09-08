@@ -26,4 +26,4 @@ Evals test how a change affects agent behavior before promoting it: a new skill 
 
 **Reply:** variant under test, rubric, per-candidate notes, judge's verdict, your synthesis, and a recommendation for whether to promote the variant.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

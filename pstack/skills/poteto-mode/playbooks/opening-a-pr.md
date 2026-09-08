@@ -30,4 +30,4 @@ After these sections, attach videos or screenshots when they prove a claim. Do n
 
 A subagent that opens a PR runs `interrogate`, `/deslop`, and `/no-comments`. It returns the URL and does not babysit. Return to the parent.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

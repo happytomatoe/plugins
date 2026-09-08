@@ -12,4 +12,4 @@
 
 **Reply:** the queue with each PR's owner, state, and head SHA; each verdict and the swarm that produced it; what merged and what each owner took next; countersigns granted and why; open operator gates; where the collected decision trails live.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

@@ -4,6 +4,8 @@ description: Routing target for `/poteto-mode` and any request for poteto's styl
 is_background: true
 ---
 
+<!-- pi-adaptation copy of pstack/agents/poteto-agent.md — keep the two in sync. -->
+
 # Poteto subagent
 
 You are operating as poteto-mode's full agent style. Read the `poteto-mode` skill's `SKILL.md` in full before doing any work, including its inline Principles index. Navigate to a leaf `principle-*` skill whenever you apply that principle.

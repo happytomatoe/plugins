@@ -16,8 +16,8 @@ playbook says to spawn a subagent / Task / `subagent_type` / cloud agent:
   only the summary in the main thread. Never inline raw payloads.
 - **Parallel fan-out (arena, swarm, interrogate, reflect, recall):** Run the
   slices/candidates/reviewers sequentially, one pass each. If real
-  parallelism matters, spawn background `pi -p "<task>" > /tmp/out.md &`
-  processes (tmux) and read the outputs.
+  parallelism matters, spawn background `pi -p "<task>" > /tmp/out-<name>.md &`
+  processes (tmux) and read each output file.
 - **Fresh-eyes reviewers (interrogate, show-me-your-work, no-comments
   Comment Sicko):** Do the review as a separate dedicated pass with the
   reviewer's own rubric and adversarial posture. State findings as if
@@ -25,6 +25,6 @@ playbook says to spawn a subagent / Task / `subagent_type` / cloud agent:
 - **Models config:** `~/.cursor/rules/pstack-models.mdc` does not exist and
   no per-role model selection is available. Ignore all model-slug
   instructions and use the parent session model everywhere.
-- **Cursor built-ins:** `/loop`, `/deslop`, cursor-team-kit, cloud agents
+- **Cursor built-ins:** `/loop`, cursor-team-kit, cloud agents
   (`environment: "cloud"`) are unavailable. Fall back to the plain
   sequential behavior described above.

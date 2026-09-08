@@ -28,4 +28,4 @@ Babysitting fails the same few ways every time. Each step below exists because t
 
 **Reply:** the mode, the frontier and its active-forge state, the watcher's four-column table on GitHub, what you fixed versus dismissed with reasons, what is still pending, and what needs the human.
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.

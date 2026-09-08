@@ -1,6 +1,6 @@
 ---
 name: setup-pstack
-description: Configure which models pstack uses per role. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", or changing pstack's model choices.
+description: Verify the pstack installation on pi: check the install directory contains the skill dirs and SUBAGENT-ADAPTER.md, and report the installed skills. Use for /setup-pstack or checking your pstack install.
 ---
 
 # Setup pstack (pi)
