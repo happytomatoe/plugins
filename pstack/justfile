@@ -1,0 +1,35 @@
+root := justfile_directory()
+
+default: install
+
+# Install pstack skills into ~/.agents/skills/pstack/ (symlinks)
+install:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	ROOT="{{root}}"
+	mkdir -p ~/.agents/skills/pstack
+	for d in "$ROOT"/skills/*/; do
+		name="$(basename "$d")"
+		[ "$name" = ".pi-glla" ] && continue
+		ln -sf "$d" ~/.agents/skills/pstack/"$name"
+	done
+	ln -sf "$ROOT"/skills/SUBAGENT-ADAPTER.md ~/.agents/skills/pstack/SUBAGENT-ADAPTER.md
+	ln -sf "$ROOT"/skills/PI-ADAPTATION.md ~/.agents/skills/pstack/PI-ADAPTATION.md
+	ln -sf "$ROOT"/agents/poteto-agent.md ~/.agents/skills/pstack/reference-poteto-agent.md
+	ln -sf "$ROOT"/agents/comment-sicko.md ~/.agents/skills/pstack/reference-comment-sicko.md
+	echo "✓ pstack skills symlinked to ~/.agents/skills/pstack/"
+	echo "  Run /setup-pstack to verify the install, then /poteto-mode to get started."
+
+# Uninstall pstack skills
+uninstall:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	rm -rf ~/.agents/skills/pstack
+	echo "✗ pstack skills removed from ~/.agents/skills/pstack/"
+
+# Update installed skills (symlinks point to repo, so just pull)
+update:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	cd "{{root}}" && git pull
+	echo "✓ pstack skills updated via symlinks"
