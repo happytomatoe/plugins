@@ -4,7 +4,7 @@ description: "Apply to any non-trivial work, not just bulk work: edits, migratio
 disable-model-invocation: true
 ---
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) before following delegation instructions in this file.
 
 # Build the Lever
 
