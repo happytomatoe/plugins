@@ -4,7 +4,7 @@ description: "Use for 'why does X work this way', 'why we picked Y', design rati
 disable-model-invocation: true
 ---
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **Pi env:** read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) before following delegation instructions in this file.
 
 # Why
 
@@ -100,7 +100,7 @@ Capture this as seed context (file paths, symbols, commits, PR numbers, linked t
 
 ### Discovery
 
-Before spawning investigators, list the available MCPs from the Cursor environment. Use the available-tools map when present. Otherwise inspect the `mcps/` directory Cursor exposes for enabled MCP servers.
+Before spawning investigators, list the available MCPs from the Pi environment. Use the available-tools map when present. Otherwise record that MCP discovery is unavailable.
 
 Map each available MCP to one evidence category:
 
@@ -119,7 +119,7 @@ Aim for a complete **coverage map**, not a minimal one. A null result from an is
 Launch all matching investigators in a single message so they run concurrently. One investigator per category lets each specialize in one tool's query vocabulary and result shape. Don't ask one agent to cover multiple MCPs.
 
 Subagent config (each):
-- `subagent_type`: `generalPurpose`
+- Use a delegated Pi pass with the adapter rules.
 - `model`: your configured why-investigators model (default `grok-4.6-fast-xhigh`)
 - `readonly`: `false` (agent mode). **Do not use readonly/Ask mode.** It strips MCP access, which disables MCP-backed investigators entirely. The source control investigator would be safe in readonly, but keep modes uniform. Investigators still shouldn't write anything. That's a posture, not a sandbox.
 
@@ -165,7 +165,7 @@ If your scope assessment suggests a single-commit trivial target where the PR de
 
 Spawn one synthesizer subagent:
 
-- `subagent_type`: `generalPurpose`
+- Use a delegated Pi pass with the adapter rules.
 - `model`: your configured why-synthesizer model (default `claude-fable-5-1-thinking-max`)
 - `readonly`: `false` (agent mode). The synthesizer's quality check spot-verifies citations, which can require MCP access. Readonly/Ask mode strips MCPs and defeats that.
 
