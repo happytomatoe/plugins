@@ -8,7 +8,7 @@ color: yellow
 reminder: New task? Playbook match or rigor needed -> apply /poteto-mode. Casual turn or user opts out -> don't.
 ---
 
-> **Pi env:** no Task tool/subagents — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) and apply substitutions wherever this file says to spawn a subagent.
+> **OMP env:** subagents use the built-in `task` tool — read [SUBAGENT-ADAPTER.md](../SUBAGENT-ADAPTER.md) for the call shape, `agent://` results, and the `task.maxRecursionDepth` gate before spawning.
 
 # Poteto mode
 
@@ -88,9 +88,9 @@ Read the leaf skill in full for any principle you apply. Each entry names when i
 
 ## Subagents
 
-**Use `subagent_type: "poteto-agent"` for any subagent you spawn inside a playbook step** (code-writing delegates, ad-hoc helpers). `/poteto-mode` and `poteto-agent` route through the same wrapper. Routed workflow skills (`how`, `why`, `interrogate`, `reflect`, `swarm`) set their own `subagent_type` for diverse-model review; respect what the skill prescribes, don't override to `poteto-agent`.
+**Use the OMP `task` tool for any subagent you spawn inside a playbook step** (code-writing delegates, ad-hoc helpers). When a wrapper with fixed defaults is wanted, define a `poteto-agent` in `.omp/agents/poteto-agent.md` and select it with `agent: "poteto-agent"`; otherwise use the bundled `task` agent. Routed workflow skills (`how`, `why`, `interrogate`, `reflect`, `swarm`) set their own agent and model for diverse-model review; respect what the skill prescribes, don't override it.
 
-**Defaults for every `Task` call.** `run_in_background: true`, agent mode (readonly strips MCP), file pointers not inlined context, explicit model per role (configurable via `/setup-pstack`; defaults `grok-4.6-fast-xhigh` for code, `claude-fable-5-1-thinking-max` for prose and judgment). Code delegates tier by difficulty. The hardest changes (cross-cutting design, gnarly concurrency, subtle algorithms) go to your strongest judgment model (`claude-fable-5-1-thinking-max`) when the task needs judgment or the intent is vague, and to your strongest instruction-following model (`claude-fable-5-1-thinking-max`) when the work is a precisely specified sequence of steps to execute to the letter; trivial mechanical edits go to your fast code model. Per-role lines in the `/setup-pstack` rule override these defaults and the model choices in the routed skills (`how`, `why`, `arena`, `swarm`, `architect`, `interrogate`, `reflect`); a role with no line keeps its default, and a role line of `inherit-parent` or `auto` runs that role on the parent chat model (omit Task `model`).
+**Defaults for every `task` item.** Spawns are async by default (`wait` when the step must block), pass file pointers instead of inlined context, and name the model in the agent file's frontmatter or `task.agentModelOverrides` — a per-call `model` works only when `task.perCallModel` is `on` (default `off`). Tier by difficulty: hardest judgment or vague intent goes to the strongest judgment model, a precisely specified sequence to the strongest instruction-follower, mechanical edits to the fast code model. Per-role lines in the `/setup-pstack` rule override these defaults and the routed skills' choices (`how`, `why`, `arena`, `swarm`, `architect`, `interrogate`, `reflect`); a role with no line keeps its default, and `inherit-parent` or `auto` runs that role on the parent model.
 
 You own every subagent's work. Review the diff and write your own summary, don't pass through what it said. Interrupt-chained resumes silently drop directives, so fire a fresh subagent with consolidated scope rather than trusting a "done" summary. A second opinion is the same prompt against a different model. Agreement is high-signal.
 
